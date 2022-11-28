@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :reviews, only: [:index]
-  resources :dog_houses, only: [:show]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :items, only: [:index]
+  resources :users, only: [:show, :index]
+
+  get '/items', to: 'items#index'
+  get '/users', to: 'users#index'
+  get '/users/:id', to: 'users#show'
+
 end
